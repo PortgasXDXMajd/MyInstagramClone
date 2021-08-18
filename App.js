@@ -15,6 +15,10 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './redux/reducers';
 import thunk from 'redux-thunk'
 
+import { endpoints } from './helpers/API/axios';
+
+import {Utility} from './helpers/API/utility';
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -31,6 +35,8 @@ export default class App extends Component {
   }
 
   componentDidMount(){
+    console.log(endpoints.getImage);
+    this.getData();
     auth.onAuthStateChanged((user)=>{
       if(!user){
         this.setState({
@@ -44,6 +50,13 @@ export default class App extends Component {
         })
       }
     })
+  }
+
+  async getData(){
+    await Utility.get(endpoints.current,{city_id:'4487042', key:'5b8a2523cdc94016a5551cd9e0a1fa9e'})
+    .then((res)=>{
+      console.log(res)
+    }).catch((error)=> console.log('error'))
   }
 
   render(){
