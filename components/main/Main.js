@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { ViewBase, Text, View, StyleSheet, Button } from 'react-native';
-import {auth} from '../Firebase';
+import { Text, View, Button } from 'react-native';
+import {auth} from '../../helpers/Firebase';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchUser } from '../../redux/actions/index.js';
 
-import {MainStyles} from '../../styles/MainStyles'
+import {styles} from '../../styles/MainStyles'
 
 
 export class Main extends Component {
@@ -26,9 +26,9 @@ export class Main extends Component {
         const {currentUser} = this.props;
 
         return (
-            <View style={MainStyles.container}>
-                <Text style={MainStyles.text}>Home</Text>
-                <Text style={MainStyles.text}>{currentUser != null? currentUser.email:`hh`}</Text>
+            <View style={styles.container}>
+                <Text style={styles.text}>Home</Text>
+                <Text style={styles.text}>{currentUser != null? currentUser.email:`hh`}</Text>
                 <Button title='Logout'  onPress={()=>this.logout()}/>
             </View>
         )

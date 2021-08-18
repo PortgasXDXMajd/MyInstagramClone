@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
-import {auth} from '../Firebase.js'
+import {auth} from '../../helpers/Firebase'
 
 export default class LoginPage extends Component {
     constructor(props){

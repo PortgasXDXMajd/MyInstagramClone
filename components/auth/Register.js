@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
-import {auth, db} from '../Firebase.js'
+import {auth, db} from '../../helpers/Firebase'
 
 export default class RegisterPage extends Component {
     constructor(props){

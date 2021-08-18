@@ -1,4 +1,4 @@
-import { db, auth } from '../../components/Firebase';
+import { db, auth } from '../../helpers/Firebase';
 import { USER_STATE_CHANGED } from '../constants';
 
 

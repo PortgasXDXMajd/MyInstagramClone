@@ -6,9 +6,9 @@ import LandingPage from './components/auth/Landing.js';
 import RegisterPage from './components/auth/Register';
 import LoginPage from './components/auth/Login';
 import Welcome from './components/Welcome.js';
-import Main from './components/home/Main.js';
+import Main from './components/main/Main.js';
 
-import {auth} from './components/Firebase';
+import {auth} from './helpers/Firebase';
 import {Provider} from 'react-redux'
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './redux/reducers';
