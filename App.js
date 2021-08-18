@@ -6,7 +6,8 @@ import LandingPage from './components/auth/Landing.js';
 import RegisterPage from './components/auth/Register';
 import LoginPage from './components/auth/Login';
 import Welcome from './components/Welcome.js';
-import Main from './components/main/Main.js';
+import Main from './components/Root.js';
+import AddScreen from './components/main/Add'
 
 import {auth} from './helpers/Firebase';
 import {Provider} from 'react-redux'
@@ -68,7 +69,12 @@ export default class App extends Component {
 
     return (
       <Provider store={store}>
-        <Main />
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName='Main'>
+              <Stack.Screen name='Main' component={Main} options={{ headerShown: false }}/>
+              <Stack.Screen name='Add' component={AddScreen}/>
+            </Stack.Navigator>
+          </NavigationContainer>
       </Provider>
     )
 
